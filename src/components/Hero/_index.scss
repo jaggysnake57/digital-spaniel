@@ -1,0 +1,85 @@
+@use '../../sass/abstracts' as *;
+
+.hero {
+	&__content {
+		display: grid;
+		place-items: center;
+		min-height: 100vh;
+
+		@include mq(large) {
+			width: 50%;
+			padding-left: 15vw;
+			display: flex;
+			align-items: center;
+		}
+
+		&-wrapper {
+			display: grid;
+			text-align: center;
+
+			@include mq(large) {
+				text-align: left;
+				width: 70%;
+			}
+		}
+	}
+
+	&__title {
+		order: 2;
+		@include popins;
+		color: var(--clr-dark-primary);
+
+		font-size: clamp(1.7em, 3vw, 3em);
+		margin-bottom: 2rem;
+		span {
+			display: block;
+			color: var(--clr-dark-secondary);
+			white-space: nowrap;
+		}
+	}
+
+	&__tagline {
+		order: 1;
+		text-transform: uppercase;
+		color: var(--clr-red-accent);
+		margin-bottom: 2rem;
+	}
+
+	&__blurb {
+		order: 3;
+		color: var(--clr-dark-secondary);
+		margin-bottom: 2rem;
+	}
+
+	.btn {
+		order: 4;
+		width: fit-content;
+		margin-inline: auto;
+
+		@include mq(large) {
+			margin: 0;
+		}
+	}
+
+	&__image {
+		width: 100vw;
+		min-height: 100vh;
+		background-image: url('./assets/Spaniel01_gradient@2x.png');
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0.4;
+
+		@include mq(large) {
+			width: 50vw;
+			right: 0;
+			left: auto;
+			opacity: 1;
+			z-index: 0;
+			background-image: url('./assets/Spaniel01_gradient.png');
+		}
+	}
+}
