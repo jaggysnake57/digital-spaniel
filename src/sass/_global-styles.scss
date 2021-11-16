@@ -1,1 +1,24 @@
 @use './abstracts' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	@include sans;
+	overflow-x: hidden;
+	min-height: 200vh;
+}
+
+.container {
+	width: 90%;
+	margin-inline: auto;
+
+	@include mq(large) {
+		width: 70%;
+	}
+}
