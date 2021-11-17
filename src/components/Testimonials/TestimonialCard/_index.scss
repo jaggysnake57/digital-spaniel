@@ -1,0 +1,63 @@
+@use '../../../sass/abstracts' as *;
+
+.testimonial-card {
+	padding: 2rem 2rem;
+	position: relative;
+	background-color: var(--clr-test-secondary);
+	border-radius: 8px;
+	text-align: center;
+	transition: transform 0.3s;
+
+	&.isFrontCard {
+		background-color: var(--clr-dark-primary);
+		color: white;
+		transform: scale(110%);
+
+		.testimonial-card__comment {
+			color: white;
+		}
+	}
+
+	&__comment {
+		position: relative;
+		margin-bottom: 3rem;
+		font-size: clamp(1.2em, 2vw, 1.625em);
+		font-style: italic;
+		line-height: 2rem;
+		color: var(--clr-dark-secondary);
+		svg {
+			opacity: 0.3;
+			font-size: 3rem;
+			position: absolute;
+		}
+		.quote-open {
+			left: -1rem;
+			top: -1.5rem;
+		}
+
+		.quote-close {
+			bottom: -1rem;
+			right: -1rem;
+		}
+	}
+
+	&__image-full {
+		display: none;
+		width: 6rem;
+	}
+
+	&__image-mobile {
+		width: 100%;
+		max-width: 6rem;
+	}
+
+	&__name {
+		font-weight: 700;
+		font-size: clamp(1.1em, 2vw, 1.3em);
+		margin-bottom: 0.7rem;
+	}
+
+	&__role {
+		font-size: clamp(1.1em, 2vw, 1.3em);
+	}
+}

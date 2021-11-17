@@ -2,7 +2,7 @@
 :root {
   --clr-dark-primary: #19293a;
   --clr-dark-secondary: #506473;
-  --clr-test-second: #e2e4e6;
+  --clr-test-secondary: #e2e4e6;
   --clr-red-accent: #c0345e;
 }
 
@@ -267,4 +267,99 @@ body {
     z-index: 0;
     background-image: url("./assets/Spaniel01_gradient.png");
   }
+}
+
+.testimonial-card {
+  padding: 2rem 2rem;
+  position: relative;
+  background-color: var(--clr-test-secondary);
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.testimonial-card.isFrontCard {
+  background-color: var(--clr-dark-primary);
+  color: white;
+  transform: scale(110%);
+}
+.testimonial-card.isFrontCard .testimonial-card__comment {
+  color: white;
+}
+.testimonial-card__comment {
+  position: relative;
+  margin-bottom: 3rem;
+  font-size: clamp(1.2em, 2vw, 1.625em);
+  font-style: italic;
+  line-height: 2rem;
+  color: var(--clr-dark-secondary);
+}
+.testimonial-card__comment svg {
+  opacity: 0.3;
+  font-size: 3rem;
+  position: absolute;
+}
+.testimonial-card__comment .quote-open {
+  left: -1rem;
+  top: -1.5rem;
+}
+.testimonial-card__comment .quote-close {
+  bottom: -1rem;
+  right: -1rem;
+}
+.testimonial-card__image-full {
+  display: none;
+  width: 6rem;
+}
+.testimonial-card__image-mobile {
+  width: 100%;
+  max-width: 6rem;
+}
+.testimonial-card__name {
+  font-weight: 700;
+  font-size: clamp(1.1em, 2vw, 1.3em);
+  margin-bottom: 0.7rem;
+}
+.testimonial-card__role {
+  font-size: clamp(1.1em, 2vw, 1.3em);
+}
+
+.testimonials {
+  padding-top: 5rem;
+}
+.testimonials__title {
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5em;
+  color: var(--clr-dark-primary);
+}
+.testimonials__title span {
+  color: var(--clr-dark-secondary);
+  display: block;
+}
+
+.swiper {
+  padding: 4rem 2rem !important;
+  overflow: visible;
+}
+@media (min-width: 1400px) {
+  .swiper {
+    overflow: hidden;
+  }
+}
+
+.pagination-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+.pagination-container .swiper-pagination {
+  bottom: 1rem !important;
+}
+.pagination-container .swiper-pagination-bullet {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.7rem !important;
+}
+.pagination-container .swiper-pagination-bullet-active {
+  background-color: var(--clr-dark-primary);
+  transform: scale(140%);
 }

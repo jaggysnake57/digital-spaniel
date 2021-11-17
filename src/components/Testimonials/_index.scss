@@ -1,0 +1,47 @@
+@use '../../sass/abstracts' as *;
+@forward './TestimonialCard/';
+
+// tesimaonials css
+.testimonials {
+	padding-top: 5rem;
+	&__title {
+		margin-bottom: 3rem;
+		text-align: center;
+		font-size: 2.5em;
+		color: var(--clr-dark-primary);
+		span {
+			color: var(--clr-dark-secondary);
+			display: block;
+		}
+	}
+}
+
+// swiper css
+.swiper {
+	padding: 4rem 2rem !important;
+	overflow: visible;
+
+	@media (min-width: 1400px) {
+		overflow: hidden;
+	}
+}
+
+.pagination-container {
+	text-align: center;
+	margin-top: 2rem;
+
+	.swiper-pagination {
+		bottom: 1rem !important;
+	}
+
+	.swiper-pagination-bullet {
+		width: 1.5rem;
+		height: 1.5rem;
+		margin: 0 0.7rem !important;
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: var(--clr-dark-primary);
+		transform: scale(140%);
+	}
+}
