@@ -19,6 +19,7 @@ import 'swiper/modules/pagination/pagination.min.css'; // Pagination module
 
 // components
 import TestimonialCard from './TestimonialCard/TestimonialCard';
+import Loading from '../Loading/Loading';
 
 const Testimonials = () => {
 	// hooks
@@ -85,7 +86,7 @@ const Testimonials = () => {
 					</div>
 				</section>
 			) : (
-				<p>loading</p>
+				<Loading />
 			)}
 		</>
 	);

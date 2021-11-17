@@ -5,3 +5,18 @@
 @mixin popins {
 	font-family: 'Poppins', sans-serif;
 }
+
+@mixin section-top {
+	padding-top: 5rem;
+}
+
+@mixin section-title {
+	@include popins;
+	text-align: center;
+	font-size: 2.5em;
+	color: var(--clr-dark-primary);
+	span {
+		color: var(--clr-dark-secondary);
+		display: block;
+	}
+}

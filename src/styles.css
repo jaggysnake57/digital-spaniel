@@ -18,6 +18,10 @@ body {
   min-height: 200vh;
 }
 
+.App {
+  overflow-x: hidden;
+}
+
 .container {
   width: 90%;
   margin-inline: auto;
@@ -33,6 +37,7 @@ body {
   color: var(--clr-dark-primary);
   font-weight: 600;
   position: relative;
+  width: fit-content;
 }
 .btn:hover {
   color: white;
@@ -52,6 +57,13 @@ body {
   bottom: -0.3rem;
   padding: 0 0.1rem;
   transition: height 0.1s;
+}
+
+.btn-secondary {
+  color: white;
+}
+.btn-secondary::after {
+  background-color: white;
 }
 
 .navbar {
@@ -214,15 +226,19 @@ body {
   }
 }
 .hero__title {
-  order: 2;
   font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 2.5em;
   color: var(--clr-dark-primary);
-  font-size: clamp(1.7em, 3vw, 3em);
+  order: 2;
   margin-bottom: 2rem;
 }
 .hero__title span {
-  display: block;
   color: var(--clr-dark-secondary);
+  display: block;
+}
+.hero__title span {
+  display: block;
   white-space: nowrap;
 }
 .hero__tagline {
@@ -267,6 +283,77 @@ body {
     z-index: 0;
     background-image: url("./assets/Spaniel01_gradient.png");
   }
+}
+
+.project {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  background-color: hotpink;
+  border-radius: 10px;
+  isolation: isolate;
+  overflow: hidden;
+}
+.project img {
+  width: 100%;
+}
+.project__full-image {
+  display: none;
+}
+.project__info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(0deg, #19293a 0%, rgba(25, 41, 58, 0) 90%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  transition: transform 0.5s;
+}
+.project__info::after {
+  content: "";
+  width: 100%;
+  background: linear-gradient(0deg, #19293a 80%, rgba(25, 41, 58, 0) 100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.project__info > * + * {
+  margin-top: 1rem;
+}
+.project__button {
+  font-size: 2.5rem;
+  border: solid 2px white;
+  border-radius: 50px;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.5s;
+}
+
+.info-is-down {
+  transform: translateY(85%);
+}
+.info-is-down::after {
+  opacity: 1;
+  transition: opacity 0.05s 0.4s;
+}
+.info-is-down .project__button {
+  transform: translateX(-50%) rotate(0);
+}
+
+.projects {
+  padding-top: 5rem;
 }
 
 .testimonial-card {
@@ -327,10 +414,11 @@ body {
   padding-top: 5rem;
 }
 .testimonials__title {
-  margin-bottom: 3rem;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   font-size: 2.5em;
   color: var(--clr-dark-primary);
+  margin-bottom: 3rem;
 }
 .testimonials__title span {
   color: var(--clr-dark-secondary);
@@ -362,4 +450,13 @@ body {
 .pagination-container .swiper-pagination-bullet-active {
   background-color: var(--clr-dark-primary);
   transform: scale(140%);
+}
+
+.loading {
+  display: grid;
+  place-items: center;
+}
+.loading img {
+  width: 100%;
+  max-width: 900px;
 }

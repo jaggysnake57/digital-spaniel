@@ -7,8 +7,8 @@ const data = {
 			comment:
 				'Working with Digital Spaniel has been a breath of fresh air. Their approach and attitude kept me informed and included from the start. Super pleased with the end results too!',
 			imageURLs: {
-				fullSize: '/images/testimonial_face03.png',
-				mobile: '/images/testimonial_face03.png',
+				fullSize: '/testimonials-images/testimonial_face03.png',
+				mobile: '/testimonials-images/testimonial_face03.png',
 			},
 		},
 		{
@@ -19,8 +19,8 @@ const data = {
 				'Advice and support from DigiSpan was second to none. Always willing to help and offer advice and solutions. A very good and rapid understanding of our requirements was key to this.',
 
 			imageURLs: {
-				fullSize: '/images/testimonial_face01.png',
-				mobile: '/images/testimonial_face01.png',
+				fullSize: '/testimonials-images/testimonial_face01.png',
+				mobile: '/testimonials-images/testimonial_face01.png',
 			},
 		},
 		{
@@ -30,8 +30,8 @@ const data = {
 			comment:
 				'We needed a creative and unique brand which could compete against established products. Digital Spaniel delivered in spades and we’ve seen a huge response to the product launch.',
 			imageURLs: {
-				fullSize: '/images/testimonial_face02.png',
-				mobile: '/images/testimonial_face02.png',
+				fullSize: '/testimonials-images/testimonial_face02.png',
+				mobile: '/testimonials-images/testimonial_face02.png',
 			},
 		},
 	],

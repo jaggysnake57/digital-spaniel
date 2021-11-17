@@ -25,15 +25,11 @@
 	}
 
 	&__title {
+		@include section-title;
 		order: 2;
-		@include popins;
-		color: var(--clr-dark-primary);
-
-		font-size: clamp(1.7em, 3vw, 3em);
 		margin-bottom: 2rem;
 		span {
 			display: block;
-			color: var(--clr-dark-secondary);
 			white-space: nowrap;
 		}
 	}

@@ -1,0 +1,6 @@
+@use '../../sass/abstracts' as *;
+@forward './Project/';
+
+.projects {
+	@include section-top;
+}
