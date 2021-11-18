@@ -26,16 +26,7 @@ const Project = ({ projectDetails }) => {
 				alt=""
 				className="project__image project__image--full"
 			/>
-			{/* <img
-				src={`${process.env.PUBLIC_URL}${images.mobile}`}
-				alt=""
-				className="project__mobile-image"
-			/>
-			<img
-				src={`${process.env.PUBLIC_URL}${images.full}`}
-				alt=""
-				className="project__full-image"
-			/> */}
+
 			<div className={`project__info ${isDown ? 'info-is-down' : ''} `}>
 				<BsChevronUp
 					className="project__button"
