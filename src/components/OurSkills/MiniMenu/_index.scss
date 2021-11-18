@@ -1,0 +1,64 @@
+@use '../../../sass/abstracts' as *;
+
+.mini-menu {
+	&__container {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+
+		@include mq(large) {
+			text-align: left;
+		}
+
+		& > * + * {
+			margin-top: 1rem;
+		}
+	}
+
+	&__menu-title {
+		@include popins;
+		text-transform: uppercase;
+		color: var(--clr-dark-primary);
+	}
+
+	&__link {
+		text-decoration: none;
+		color: var(--clr-dark-secondary);
+		font-size: 1.2em;
+		position: relative;
+		white-space: nowrap;
+
+		@include mq(large) {
+			max-width: 13rem;
+		}
+
+		&:hover,
+		&:focus {
+			&::after {
+				opacity: 1;
+			}
+		}
+
+		&::after {
+			content: '>';
+			width: 1.6rem;
+			aspect-ratio: 1;
+			display: grid;
+			place-content: center;
+			position: absolute;
+			right: 15%;
+			top: 50%;
+			transform: translateY(-50%);
+			border-radius: 35px;
+			font-size: 1rem;
+			color: white;
+			background-color: var(--clr-dark-secondary);
+			opacity: 0;
+			transition: opacity 0.1s;
+
+			@include mq(large) {
+				right: -1rem;
+			}
+		}
+	}
+}

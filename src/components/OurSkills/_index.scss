@@ -1,0 +1,48 @@
+@use '../../sass/abstracts' as *;
+@forward './MiniMenu/';
+
+.our-skills {
+	@include section-top;
+	padding-bottom: 5rem;
+
+	@include mq(large) {
+		.container {
+			display: flex;
+			justify-content: space-between;
+			gap: 2rem;
+		}
+	}
+
+	&__info {
+		margin-bottom: 5rem;
+		flex: 1;
+	}
+
+	&__title {
+		@include section-title;
+		margin-bottom: 3rem;
+	}
+
+	&__blurb {
+		margin-bottom: 2rem;
+		margin-inline: auto;
+		color: var(--clr-dark-secondary);
+		font-size: clamp(1em, 2vw, 1.3em);
+		line-height: clamp(1.5rem, 3vw, 2.3rem);
+
+		@include mq(large) {
+			max-width: 30rem;
+			margin-inline: 0;
+		}
+	}
+
+	&__skill-menu-container {
+		display: grid;
+		gap: 3rem;
+		flex: 1;
+
+		@include mq(medium) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
