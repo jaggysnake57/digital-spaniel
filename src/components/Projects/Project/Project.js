@@ -14,7 +14,19 @@ const Project = ({ projectDetails }) => {
 			className={`project project--${
 				isDoubleWide ? 'span-2' : 'span-1'
 			}`}>
-			<img
+			<div
+				style={{
+					backgroundImage: `url(${process.env.PUBLIC_URL}${images.mobile})`,
+				}}
+				alt=""
+				className="project__image project__image--mobile"
+			/>
+			<div
+				src={`${process.env.PUBLIC_URL}${images.full}`}
+				alt=""
+				className="project__image project__image--full"
+			/>
+			{/* <img
 				src={`${process.env.PUBLIC_URL}${images.mobile}`}
 				alt=""
 				className="project__mobile-image"
@@ -23,7 +35,7 @@ const Project = ({ projectDetails }) => {
 				src={`${process.env.PUBLIC_URL}${images.full}`}
 				alt=""
 				className="project__full-image"
-			/>
+			/> */}
 			<div className={`project__info ${isDown ? 'info-is-down' : ''} `}>
 				<BsChevronUp
 					className="project__button"

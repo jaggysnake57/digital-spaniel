@@ -17,7 +17,7 @@
 	// for items that span 2 grid spaces
 	&--span-2 {
 		grid-column: span 2;
-		aspect-ratio: 2.01;
+		aspect-ratio: 2.03;
 
 		.info-is-down {
 			.project__button {
@@ -30,8 +30,17 @@
 		}
 	}
 
-	img {
+	// img {
+	// 	width: 100%;
+	// }
+
+	&__image {
 		width: 100%;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: transform 0.3s;
 	}
 
 	&__full-image {
@@ -132,6 +141,10 @@
 // rule for large screen
 @include mq(large) {
 	.project:hover {
+		.project__image {
+			transform: scale(105%);
+		}
+
 		.project__info {
 			transform: translateY(0);
 			h2,
