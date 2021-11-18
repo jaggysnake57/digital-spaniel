@@ -28,6 +28,7 @@ const Navbar = () => {
 				if (!showNavbar) setShowNavbar(true);
 			} else {
 				if (showNavbar) setShowNavbar(false);
+				if (menuIsOpen) setMenuIsOpen(false);
 			}
 			prevScrollpos = currentScrollPos;
 		};

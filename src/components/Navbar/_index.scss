@@ -16,11 +16,13 @@
 	}
 
 	&--hasBackground {
-		background-color: white;
-		a {
-			color: var(--clr-dark-primary) !important;
-			&::after {
-				background-color: var(--clr-dark-primary) !important;
+		@include mq(large) {
+			background-color: white;
+			a {
+				color: var(--clr-dark-primary) !important;
+				&::after {
+					background-color: var(--clr-dark-primary) !important;
+				}
 			}
 		}
 	}
@@ -43,7 +45,8 @@
 
 	&__main-nav {
 		position: absolute;
-		top: -1rem;
+
+		top: 0;
 		right: 0rem;
 		height: 100vh;
 		width: 75%;
