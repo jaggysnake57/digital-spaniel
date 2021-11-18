@@ -9,6 +9,16 @@ const Navbar = () => {
 	//state
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
 	const [showNavbar, setShowNavbar] = useState(true);
+	const [hasBackground, setHasBackground] = useState(false);
+
+	const handleNavBackground = () => {
+		let viewportHeight = window.innerHeight;
+		if (window.pageYOffset > viewportHeight) {
+			if (!hasBackground) setHasBackground(true);
+		} else {
+			setHasBackground(false);
+		}
+	};
 
 	useEffect(() => {
 		var prevScrollpos = window.pageYOffset;
@@ -21,11 +31,21 @@ const Navbar = () => {
 			}
 			prevScrollpos = currentScrollPos;
 		};
-		return () => {};
 	}, [showNavbar]);
 
+	useEffect(() => {
+		window.addEventListener('scroll', handleNavBackground);
+
+		return () => {
+			window.removeEventListener('scroll', handleNavBackground);
+		};
+	}, []);
+
 	return (
-		<header className={`navbar ${showNavbar ? 'navbar--show-navbar' : ''}`}>
+		<header
+			className={`navbar ${showNavbar ? 'navbar--show-navbar' : ''} ${
+				hasBackground ? 'navbar--hasBackground' : ''
+			}`}>
 			<div className="container">
 				<div className="navbar__brand">
 					<Link to="/">

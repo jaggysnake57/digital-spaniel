@@ -80,11 +80,20 @@ body {
   transform: translateY(-110%);
   transition: transform 1s;
   z-index: 1;
-  top: 1rem;
+  padding: 1rem 0;
 }
 .navbar--show-navbar {
   transform: translateY(0);
   transition: transform 0.3s;
+}
+.navbar--hasBackground {
+  background-color: white;
+}
+.navbar--hasBackground a {
+  color: var(--clr-dark-primary) !important;
+}
+.navbar--hasBackground a::after {
+  background-color: var(--clr-dark-primary) !important;
 }
 .navbar .container {
   display: flex;
