@@ -1,3 +1,5 @@
+@use './media' as *;
+
 @mixin sans {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -14,7 +16,14 @@
 	@include popins;
 	text-align: center;
 	font-size: 2.5em;
+	font-size: 1.7em;
+	font-size: clamp(1.7em, 3vw, 2.5em);
 	color: var(--clr-dark-primary);
+
+	@include mq(medium) {
+		text-align: left;
+	}
+
 	span {
 		color: var(--clr-dark-secondary);
 		display: block;

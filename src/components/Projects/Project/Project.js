@@ -3,19 +3,24 @@ import { Link } from 'react-router-dom';
 import { BsChevronUp } from 'react-icons/bs';
 import { useState } from 'react';
 
-const Project = () => {
+const Project = ({ projectDetails }) => {
 	//state
 	const [isDown, setIsDown] = useState(true);
 
+	const { name, blurb, link, images, isDoubleWide } = projectDetails || {};
+
 	return (
-		<div className="project">
+		<div
+			className={`project project--${
+				isDoubleWide ? 'span-2' : 'span-1'
+			}`}>
 			<img
-				src={`${process.env.PUBLIC_URL}/project-images/makerek.png`}
+				src={`${process.env.PUBLIC_URL}${images.mobile}`}
 				alt=""
 				className="project__mobile-image"
 			/>
 			<img
-				src={`${process.env.PUBLIC_URL}/project-images/makerek@2x.png`}
+				src={`${process.env.PUBLIC_URL}${images.full}`}
 				alt=""
 				className="project__full-image"
 			/>
@@ -24,12 +29,9 @@ const Project = () => {
 					className="project__button"
 					onClick={() => setIsDown(!isDown)}
 				/>
-				<h2 className="project__title">Make Ideas Happen</h2>
-				<p className="project__blurb">
-					A local paper with big ideas needed A sharp new brand to
-					inspire readers.
-				</p>
-				<Link className="btn btn-secondary" to="/">
+				<h2 className="project__title">{name}</h2>
+				<p className="project__blurb">{blurb}</p>
+				<Link className="btn btn-secondary" to={link}>
 					Full Project
 				</Link>
 			</div>
