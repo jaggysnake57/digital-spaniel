@@ -28,6 +28,14 @@
 		@include section-title;
 		order: 2;
 		margin-bottom: 2rem;
+
+		@include mq(medium) {
+			text-align: center;
+		}
+		@include mq(large) {
+			text-align: left;
+		}
+
 		span {
 			display: block;
 			white-space: nowrap;
@@ -42,9 +50,19 @@
 	}
 
 	&__blurb {
+		width: 90%;
+		max-width: 40rem;
+		margin-inline: auto;
 		order: 3;
 		color: var(--clr-dark-secondary);
 		margin-bottom: 2rem;
+		font-size: clamp(1em, 2vw, 1.3em);
+		line-height: clamp(1.5rem, 3vw, 2.3rem);
+
+		@include mq(large) {
+			width: 100%;
+			max-width: auto;
+		}
 	}
 
 	.btn {
