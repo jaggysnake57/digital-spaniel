@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Project from './Project/Project';
+import { BsChevronUp } from 'react-icons/bs';
 
 const Projects = () => {
 	const projects = [
@@ -13,6 +15,7 @@ const Projects = () => {
 				mobile: 'project-images/makerek.png',
 			},
 			isDoubleWide: false,
+			tags: ['branding', 'web-design'],
 		},
 		{
 			id: '394857349857348',
@@ -24,6 +27,7 @@ const Projects = () => {
 				mobile: 'project-images/newspaper.png',
 			},
 			isDoubleWide: true,
+			tags: ['branding', 'marketing', 'web-design'],
 		},
 		{
 			id: '37459753495734895',
@@ -35,9 +39,10 @@ const Projects = () => {
 				mobile: 'project-images/whellies01.png',
 			},
 			isDoubleWide: false,
+			tags: ['branding', 'marketing'],
 		},
 		{
-			id: '37459753495734895',
+			id: '98789797897',
 			name: 'Make Ideas Happen',
 			blurb: 'A local paper with big ideas needed A sharp new brand to inspire readers.',
 			link: '/',
@@ -46,9 +51,10 @@ const Projects = () => {
 				mobile: 'project-images/newspaper02.png',
 			},
 			isDoubleWide: false,
+			tags: ['marketing', 'web-design'],
 		},
 		{
-			id: '37459753495734895',
+			id: '876876876876',
 			name: 'Animation Studio',
 			blurb: 'A local paper with big ideas needed A sharp new brand to inspire readers.',
 			link: '/',
@@ -57,17 +63,31 @@ const Projects = () => {
 				mobile: 'project-images/rider01.png',
 			},
 			isDoubleWide: false,
+			tags: ['branding', 'web-design'],
 		},
 	];
 
 	const [activeFilter, setActiveFilter] = useState('all');
 	const [showFilterMenu, setShowFilterMenu] = useState(false);
+	const [filteredProjects, setFilteredProjects] = useState([]);
 
 	const setActiveClass = (filterName) => {
 		return `projects__link  ${
 			activeFilter === filterName ? 'projects__link--active' : ''
 		}`;
 	};
+
+	useEffect(() => {
+		if (activeFilter === 'all') {
+			setFilteredProjects(projects);
+		} else {
+			const filtered = projects.filter((project) =>
+				project.tags.includes(activeFilter)
+			);
+
+			setFilteredProjects(filtered);
+		}
+	}, [activeFilter]);
 
 	return (
 		<section className="projects">
@@ -109,9 +129,24 @@ const Projects = () => {
 				</div>
 
 				<div className="projects__wrapper">
-					{projects.map((project) => (
+					{filteredProjects.map((project) => (
 						<Project projectDetails={project} key={project.id} />
 					))}
+				</div>
+
+				<div className="projects__buttons-wrapper">
+					<div className="projects__slide-buttons">
+						<button className="projects__slide-button projects__slide-button--prev">
+							<BsChevronUp />
+						</button>
+						<button className="projects__slide-button projects__slide-button--next">
+							<BsChevronUp />
+						</button>
+					</div>
+
+					<Link className="btn btn-primary" to="/">
+						See all work
+					</Link>
 				</div>
 			</div>
 		</section>

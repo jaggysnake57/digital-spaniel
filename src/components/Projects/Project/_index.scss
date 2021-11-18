@@ -102,6 +102,10 @@
 		@include mq(large) {
 			display: none;
 		}
+
+		@media (max-width: 375px) {
+			top: -0.6rem;
+		}
 	}
 }
 
