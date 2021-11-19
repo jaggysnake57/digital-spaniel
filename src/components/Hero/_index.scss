@@ -78,7 +78,7 @@
 	&__image {
 		width: 100vw;
 		min-height: 100vh;
-		background-image: url('./assets/Spaniel01_gradient@2x.png');
+		background-image: url('./assets/Spaniel01_gradient.png');
 		background-size: cover;
 		background-position: center;
 		position: absolute;
@@ -93,7 +93,7 @@
 			left: auto;
 			opacity: 1;
 			z-index: 0;
-			background-image: url('./assets/Spaniel01_gradient.png');
+			background-image: url('./assets/Spaniel01_gradient@2x.png');
 		}
 	}
 }
